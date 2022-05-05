@@ -7,7 +7,7 @@ use crate::error::Error;
 
 #[derive(Clone)]
 pub struct Sender {
-    client: RabbitClient,
+    pub client: RabbitClient,
     channel: Channel,
     exchange: String,
     routing_key: String,

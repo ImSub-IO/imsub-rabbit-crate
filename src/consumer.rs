@@ -4,7 +4,7 @@ use crate::{RabbitClient, error::Error};
 
 
 pub struct Consumer {
-    client: RabbitClient,
+    pub client: RabbitClient,
     channel: Channel,
     queue: String,
     consumer_tag: String,
