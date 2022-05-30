@@ -10,7 +10,9 @@ use tokio::sync::RwLock;
 use lapin::{Channel, Connection, ConnectionProperties, ConnectionState};
 use error::Error;
 
-#[derive(Clone)]
+pub use error::Error as RabbitClientError;
+
+#[derive(Clone, Debug)]
 pub struct RabbitClient {
     ampq_url: String,
     conn: Arc<RwLock<Connection>>,

@@ -1,9 +1,12 @@
 use lapin::Error as LapinError;
 use tokio::sync::mpsc::error::SendError;
+use thiserror::Error;
 
-#[derive(Debug)]
+#[derive(Error, Debug)]
 pub enum Error {
+    #[error("rabbit error: {0}")]
     Rabbit(LapinError),
+    #[error("queue error")]
     Mpsc,
 }
 
