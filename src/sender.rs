@@ -5,7 +5,7 @@ use tokio::sync::mpsc::{unbounded_channel, UnboundedReceiver, UnboundedSender};
 use crate::RabbitClient;
 use crate::error::Error;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Sender {
     pub client: RabbitClient,
     channel: Channel,

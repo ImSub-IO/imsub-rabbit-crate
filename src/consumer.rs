@@ -2,7 +2,7 @@ use lapin::{Channel, options::BasicConsumeOptions, types::FieldTable, ConsumerDe
 
 use crate::{RabbitClient, error::Error};
 
-
+#[derive(Clone, Debug)]
 pub struct Consumer {
     pub client: RabbitClient,
     channel: Channel,
